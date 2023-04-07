@@ -1,6 +1,6 @@
 {
-  "name": "jirafy-sync",
-  "version": "2.1.0",
+  "name": "jira-sync",
+  "version": "1.1",
   "description": "Sync Jira tickets and version based on a given changelog",
   "main": "dist/index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "changelog",
     "sync"
   ],
-  "author": "onXmaps",
+  "author": "inkitt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/onXmaps/jirafy-sync/issues"

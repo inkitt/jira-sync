@@ -134,6 +134,24 @@ async function setIssueProperties(issueId, issueUpdate) {
 }
 
 /**
+ * Set Jira issue properties
+ * @param {String} issueId
+ * @param {String} issueUpdate
+ * @returns {object} Success response || error & status code
+ */
+async function getFixVersion(issueId) {
+  return await fetch(`https://${options.host}/rest/api/2/issue/${issueId}?fields=fixVersions`, {
+    method: 'GET',
+    headers: fetchHeader,
+  })
+    .then((response) => {
+      core.info(response)
+      return response
+    })
+    .catch((err) => console.log(err))
+}
+
+/**
  *
  * @param {String} changelog Changelog
  * @param {String} version Release version
@@ -160,8 +178,16 @@ function createVersionAndUpdateFixVersions(changelog, version) {
       // Set the fix version for each Jira ticket, linking it the jira version
       const issueProperties = `{"update":{"fixVersions":[{"set":[{"name":"${version}"}]}]}}`
       tickets.forEach(async (ticket) => {
-        console.log('\x1b[32m%s\x1b[0m', `Attempting to set fix version: ${version} for ticket: ${ticket}`)
-        await setIssueProperties(ticket, JSON.parse(issueProperties))
+        const response = await getFixVersion(ticket, JSON.parse(issueProperties))
+        const json = await response.json()
+        const fixVersions = json.fields.fixVersions
+        console.log('\x1b[32m%s\x1b[0m', `json a: ${JSON.stringify(fixVersions)}`)
+        if (!fixVersions.length) {
+          console.log('\x1b[32m%s\x1b[0m', `Attempting to set fix version: ${version} for ticket: ${ticket}`)
+          await setIssueProperties(ticket, JSON.parse(issueProperties))
+        } else {
+          console.log('\x1b[32m%s\x1b[0m', `Fix version for ticket: ${ticket} is already set to: ${fixVersions[0].name}`)
+        }
       })
     })
   } catch (err) {
