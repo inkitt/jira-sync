@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccc5a900-2f3a-4698-b471-7a1b0e52d55a" name="Changes" comment="getting fix versions" />
+    <list default="true" id="ccc5a900-2f3a-4698-b471-7a1b0e52d55a" name="Changes" comment="getting fix versions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +12,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Adding more logging" />
+        <option name="rewordedMessage" value="Not updating a ticket fixVersion if it's already set" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="f0be3319c0a0aed64ba43324c05879186877cf43" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -17,6 +29,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -34,7 +47,10 @@
       <option name="presentableId" value="Default" />
       <updated>1680869402096</updated>
       <workItem from="1680869404022" duration="9138000" />
-      <workItem from="1681216558203" duration="1208000" />
+      <workItem from="1681216558203" duration="2928000" />
+      <workItem from="1687866128753" duration="21000" />
+      <workItem from="1687866164503" duration="59000" />
+      <workItem from="1687866242922" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="Adding more logging">
       <created>1680869796595</created>

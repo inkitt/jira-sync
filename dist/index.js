@@ -61541,7 +61541,7 @@ function createVersionAndUpdateFixVersions(changelog, version) {
       tickets.forEach(async (ticket) => {
         const response = await getFixVersion(ticket, JSON.parse(issueProperties))
         const json = await response.json()
-        const fixVersions = json.fields.fixVersions
+        const fixVersions = json.fields?.fixVersions || []
         console.log('\x1b[32m%s\x1b[0m', `json a: ${JSON.stringify(fixVersions)}`)
         if (!fixVersions.length) {
           console.log('\x1b[32m%s\x1b[0m', `Attempting to set fix version: ${version} for ticket: ${ticket}`)
