@@ -160,7 +160,6 @@ function createVersionAndUpdateFixVersions(changelog, version) {
   const tickets = parseChangelogForJiraTickets(changelog)
   // Remove duplicate projects
   const projects = [...new Set(getProjectNameByTicket(tickets))]
-  version = parseForVersion(version)
 
   console.log('\x1b[32m%s\x1b[0m', `Projects are: ${projects}`)
   console.log('\x1b[32m%s\x1b[0m', `Tickets are: ${tickets}`)
